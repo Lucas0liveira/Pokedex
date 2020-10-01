@@ -1,6 +1,10 @@
 <template>
-  <h1>POKEDEX</h1>
-  <Card />
+  <div class="container">
+    <div class="title">
+      <h1>Pokedex</h1>
+      <Card />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -13,6 +17,24 @@ export default {
 
 <style>
 body {
-  background-color: rgb(255, 220, 190);
+  background-color: rgb(66, 142, 255);
+}
+
+.container {
+  padding: 32px;
+  max-width: 1200px;
+  height: 100vh;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-radius: 8px;
+  width: 90vh;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
 }
 </style>
