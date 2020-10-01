@@ -2,6 +2,8 @@
   <div class="container">
     <div class="title">
       <h1>Pokedex</h1>
+    </div>
+    <div class="pokemons">
       <Card />
     </div>
   </div>
@@ -18,6 +20,7 @@ export default {
 <style>
 body {
   background-color: rgb(66, 142, 255);
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -26,6 +29,15 @@ body {
   height: 100vh;
 }
 .title {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-radius: 8px;
+  width: 90vh;
+  margin-bottom: 64px;
+}
+
+.pokemons {
   display: flex;
   justify-content: center;
   background-color: white;
