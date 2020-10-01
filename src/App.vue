@@ -1,5 +1,5 @@
 <template>
-  PokeDex
+  Leozao esteve aqui
 </template>
 
 <script>
