@@ -13,6 +13,6 @@ export default {
 
 <style>
 body {
-  background-color: rgb(255, 221, 190);
+  background-color: rgb(255, 220, 190);
 }
 </style>
