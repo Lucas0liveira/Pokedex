@@ -56,12 +56,15 @@ export default {
   border-radius: 5px;
   border-bottom: solid 1px #141414;
   padding: 8px;
+  background-image: url("../assets/fundo1.jpg");
+  background-size: cover;
 }
 .image {
   display: flex;
   justify-content: center;
   align-items: center;
   max-height: 120px;
+
 }
 .nomePoke {
   text-align: center;
