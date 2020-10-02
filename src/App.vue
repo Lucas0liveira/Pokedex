@@ -9,8 +9,7 @@
         :key="index"
         :name="p.name.toUpperCase()"
         :image="adjustIndex(index + 1)"
-        type1="Grass"
-        type2="Poison"
+        :types="p.types"
         :number="index + 1"
       />
     </div>
@@ -95,8 +94,9 @@ body {
 .pokemons {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 5px;
   height: auto;
 }
