@@ -4,10 +4,15 @@
       <h1>Pokedex</h1>
     </div>
     <div class="pokemons">
-      <Card />
-      <div>
-        <p v-for="(p, index) in pokemonList" :key="index">{{ p.name }}</p>
-      </div>
+      <Card
+        v-for="(p, index) in pokemonList"
+        :key="index"
+        :name="p.name.toUpperCase()"
+        :image="adjustIndex(index + 1)"
+        type1="Grass"
+        type2="Poison"
+        :number="index + 1"
+      />
     </div>
   </div>
 </template>
@@ -39,6 +44,15 @@ export default {
         this.pokemonList = pokemons;
         console.log(this.pokemonList);
       });
+    },
+    adjustIndex(index) {
+      if (index < 10) {
+        return `00${index}`;
+      } else if (index < 100) {
+        return `0${index}`;
+      } else {
+        return `${index}`;
+      }
     }
   }
 };
@@ -50,6 +64,7 @@ body {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #6b00b3);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
+  background-attachment: fixed;
 }
 
 @keyframes gradient {
@@ -66,7 +81,7 @@ body {
 
 .container {
   padding: 32px;
-  max-width: 1200px;
+  max-width: 1440px;
   height: 100vh;
 }
 .title {
@@ -74,16 +89,15 @@ body {
   justify-content: center;
   background-color: white;
   border-radius: 5px;
-  width: 100vh;
   margin-bottom: 64px;
 }
 
 .pokemons {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   background-color: white;
   border-radius: 5px;
-  width: 100vh;
   height: auto;
 }
 
