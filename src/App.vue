@@ -41,7 +41,6 @@ export default {
       }
       Promise.all(pendentes).then(pokemons => {
         this.pokemonList = pokemons;
-        console.log(this.pokemonList);
       });
     },
     adjustIndex(index) {

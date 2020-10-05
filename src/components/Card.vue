@@ -36,7 +36,7 @@ export default {
     name: { type: String, required: true },
     types: { type: Array },
     image: { type: String, required: true },
-    number: { type: String, required: true }
+    number: { type: Number, required: true }
   },
   methods: {
     getTypes() {
@@ -54,7 +54,6 @@ export default {
   },
   created() {
     this.getTypes();
-    console.log(this.typeList);
   }
 };
 </script>
