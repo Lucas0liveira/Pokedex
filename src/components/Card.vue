@@ -79,11 +79,12 @@ export default {
   border-radius: 5px;
   background-color: #ffffff;
   margin: 12px;
-  box-shadow: #d3d3d3 8px 8px 1px;
+  box-shadow: #929292 8px 8px 1px;
   transition: 0.5s;
 }
 .card:hover {
   transform: translateY(-8px);
+  box-shadow: #929292 8px 8px 1px;
 }
 .pokemon {
   background-color: rgb(204, 204, 204);
@@ -91,7 +92,7 @@ export default {
   max-height: 196px;
   border-radius: 2px;
   padding: 8px;
-  background-image: url("../assets/fundo1.jpg");
+  /* background-image: url("../assets/fundo1.jpg"); */
   background-size: cover;
 }
 .image {
@@ -99,7 +100,6 @@ export default {
   justify-content: center;
   align-items: center;
   max-height: 120px;
-
 }
 .nomePoke {
   text-align: center;
