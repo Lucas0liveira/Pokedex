@@ -91,12 +91,15 @@ export default {
   max-height: 196px;
   border-radius: 2px;
   padding: 8px;
+  background-image: url("../assets/fundo1.jpg");
+  background-size: cover;
 }
 .image {
   display: flex;
   justify-content: center;
   align-items: center;
   max-height: 120px;
+
 }
 .nomePoke {
   text-align: center;
