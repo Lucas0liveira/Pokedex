@@ -92,7 +92,7 @@ export default {
   max-height: 196px;
   border-radius: 2px;
   padding: 8px;
-  /* background-image: url("../assets/fundo1.jpg"); */
+  background-image: url("../assets/fundo1.jpg");
   background-size: cover;
 }
 .image {
