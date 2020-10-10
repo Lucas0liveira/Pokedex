@@ -88,6 +88,7 @@ export default {
   width: 48px;
   text-align: center;
   position: absolute;
+  box-shadow: #505050 4px 4px 2px;
 }
 .card:hover {
   transform: translateY(-8px);
@@ -101,7 +102,6 @@ export default {
   max-height: 196px;
   border-radius: 2px;
   padding: 8px;
-  /* background-image: url("../assets/fundo1.jpg"); */
   background-size: cover;
 }
 .image {

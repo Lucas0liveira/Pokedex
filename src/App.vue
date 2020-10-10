@@ -6,7 +6,7 @@
     <div class="pokemons">
       <div
         class="poke"
-        @click="summonModal(index + 1)"
+        @click="summonModal(index)"
         v-for="(p, index) in pokemonList"
         :key="index"
       >
@@ -18,7 +18,7 @@
         />
       </div>
       <div v-if="showModal" class="modal">
-        <Modal :pokeId="pokeId" />
+        <Modal :pokeId="pokeId" :pokemon="pokemonList[pokeId]" :image="adjustIndex(pokeId + 1)" :types="pokemonList[pokeId].types"/>
         <button class="modal-btn" @click="showModal = false">
           <img
             src="./assets/close.png"
