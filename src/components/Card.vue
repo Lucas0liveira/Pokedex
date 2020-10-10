@@ -1,6 +1,6 @@
 <template>
-  <div :class="cardClass" @Click="expand" @blur="expand">
-    <div class="pokemon">
+  <div :class="cardClass">
+    <div class="pokemon" :style="`background-color: ${bgColors[typeList[0]]}`">
       <p class="id">#{{ number }}</p>
       <div class="image">
         <img
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <p class="nomePoke">{{ name }}</p>
+    <p class="nomePoke" style="margin-top: 12px">{{ name }}</p>
 
     <div class="tipos">
       <p :class="`tipo ${t}`" v-for="(t, index) in typeList" :key="index">
@@ -29,7 +29,24 @@ export default {
   data() {
     return {
       cardClass: "card",
-      typeList: []
+      typeList: [],
+      bgColors: {
+        poison: "#ba84e0",
+        grass: "#ade084",
+        fire: "#e0b784",
+        water: "#84b8e0",
+        bug: "#84e092",
+        normal: "#d9d9d9",
+        electric: "#ede098",
+        fairy: "#e693c1",
+        ground: "#edc098",
+        fighting: "#f05965",
+        psychic: "#ff8299",
+        rock: "#c9a28b",
+        ice: "#6bc6d6",
+        ghost: "#424587",
+        dragon: "#debd6f"
+      }
     };
   },
   props: {
@@ -43,16 +60,10 @@ export default {
       for (var i = 0; i < this.types.length; i++) {
         this.typeList.push(this.types[i].type.name);
       }
-    },
-    expand() {
-      if (this.cardClass === "card") {
-        this.cardClass = "expanded";
-      } else {
-        this.cardClass = "card";
-      }
     }
   },
   created() {
+    console.log(this.bgColors[this.typeList[1]]);
     this.getTypes();
   }
 };
@@ -70,36 +81,34 @@ export default {
   margin: 12px;
   transition: 0.5s;
 }
-.expanded {
-  display: flex;
-  flex-direction: column;
-  width: 392px;
-  height: 560px;
-  border: solid thin #cecece;
-  border-radius: 5px;
-  background-color: #ffffff;
-  margin: 12px;
-  box-shadow: #929292 8px 8px 1px;
-  transition: 0.5s;
+.id {
+  background-color: #f3f3f3;
+  border-radius: 16px;
+  color: #141414;
+  width: 48px;
+  text-align: center;
+  position: absolute;
 }
 .card:hover {
   transform: translateY(-8px);
   box-shadow: #929292 8px 8px 1px;
 }
 .pokemon {
+  display: flex;
+  flex-wrap: wrap;
   background-color: rgb(204, 204, 204);
   height: 100vh;
   max-height: 196px;
   border-radius: 2px;
   padding: 8px;
-  background-image: url("../assets/fundo1.jpg");
+  /* background-image: url("../assets/fundo1.jpg"); */
   background-size: cover;
 }
 .image {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 120px;
+  max-height: 188px;
 }
 .nomePoke {
   text-align: center;

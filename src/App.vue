@@ -4,31 +4,49 @@
       <h1>Pokedex</h1>
     </div>
     <div class="pokemons">
-      <Card
+      <div
+        class="poke"
+        @click="summonModal(index + 1)"
         v-for="(p, index) in pokemonList"
         :key="index"
-        :name="p.name.toUpperCase()"
-        :image="adjustIndex(index + 1)"
-        :types="p.types"
-        :number="index + 1"
-      />
+      >
+        <Card
+          :name="p.name.toUpperCase()"
+          :image="adjustIndex(index + 1)"
+          :types="p.types"
+          :number="index + 1"
+        />
+      </div>
+      <div v-if="showModal" class="modal">
+        <Modal :pokeId="pokeId" />
+        <button class="modal-btn" @click="showModal = false">
+          <img
+            src="./assets/close.png"
+            alt="Close button"
+            style="height:64px"
+          />
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Card from "../src/components/Card";
+import Modal from "../src/components/Modal";
 export default {
   created() {
     this.fetchPokemon();
   },
   data() {
     return {
-      pokemonList: []
+      pokemonList: [],
+      showModal: false,
+      pokeId: 0
     };
   },
   name: "App",
-  components: { Card },
+  components: { Card, Modal },
   methods: {
     fetchPokemon() {
       const pendentes = [];
@@ -51,6 +69,11 @@ export default {
       } else {
         return `${index}`;
       }
+    },
+    summonModal(id) {
+      console.log(this.showModal);
+      this.showModal = true;
+      this.pokeId = id;
     }
   }
 };
@@ -98,6 +121,20 @@ body {
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
   height: auto;
+}
+
+.modal-btn {
+  position: fixed;
+  top: 10vh;
+  left: 80%;
+  background: none;
+  border: none;
+  transition: 0.2s;
+}
+
+.modal-btn:hover {
+  cursor: pointer;
+  transform: rotateY(180deg);
 }
 
 #app {
