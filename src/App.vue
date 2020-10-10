@@ -139,7 +139,6 @@ body {
 
 .modal-btn:hover {
   cursor: pointer;
-  opacity: 70%;
 }
 
 #app {
