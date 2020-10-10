@@ -106,7 +106,7 @@ export default {
         bug: "yellowgreen",
         normal: "grey",
         electric: "rgb(255, 167, 4)",
-        fairy: "#rgb(255, 88, 219)",
+        fairy: "rgb(255, 88, 219)",
         ground: "rgb(184, 110, 0)",
         fighting: " rgb(197, 0, 0)",
         psychic: "rgb(255, 97, 92)",
