@@ -2,8 +2,13 @@
   <div class="bar-outside" :style="`width: ${300}px`">
     <div
       class="bar-inside"
-      :style="`width: ${calcBar(value, typeList[type])}px`"
-    >{{value}}</div>
+      :style="
+        `width: ${calcBar(value, typeList[type])}px; 
+        background-color: ${color};`
+      "
+    >
+      {{ value }}
+    </div>
   </div>
 </template>
 
@@ -18,13 +23,13 @@ export default {
         speed: 140,
         special: 154,
         weight: 460
-      },
+      }
     };
   },
   props: {
     type: { type: String, required: true },
     value: { type: Number, required: true },
-    color: {type: String, required: true}
+    color: { type: String, required: true }
   },
   methods: {
     calcBar(value, max) {
@@ -45,9 +50,8 @@ export default {
 }
 .bar-inside {
   height: 24px;
-  background-color: rgb(255, 71, 71);
   border-radius: 5px;
-  color:white;
+  color: white;
   font-weight: bold;
   text-align: center;
 }

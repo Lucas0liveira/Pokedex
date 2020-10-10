@@ -18,7 +18,12 @@
         />
       </div>
       <div v-if="showModal" class="modal">
-        <Modal :pokeId="pokeId" :pokemon="pokemonList[pokeId]" :image="adjustIndex(pokeId + 1)" :types="pokemonList[pokeId].types"/>
+        <Modal
+          :pokeId="pokeId"
+          :pokemon="pokemonList[pokeId]"
+          :image="adjustIndex(pokeId + 1)"
+          :types="pokemonList[pokeId].types"
+        />
         <button class="modal-btn" @click="showModal = false">
           <img
             src="./assets/close.png"
@@ -134,7 +139,7 @@ body {
 
 .modal-btn:hover {
   cursor: pointer;
-  transform: rotateY(180deg);
+  opacity: 70%;
 }
 
 #app {
