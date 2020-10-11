@@ -1,24 +1,16 @@
 # pokedex
 
-## Project setup
+## Setup do projeto
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Execução
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### Link para visualizar online
 ```
-yarn build
+[https://pokedex-dun-ten.vercel.app]
 ```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
